@@ -1,23 +1,22 @@
 
-var nav =new Vue ({
+var nav = new Vue ({
     el:'#nav',
-    data: {
-        isOpenHome:false,
-        isOpenPage:false,
+    data:{
+        showHomeDetail:false,
+        showPageDetail:false,
     },
     methods: {
         mouseoverHome: function () {
-            this.isOpenHome = true;
+            this.showHomeDetail = true;
         },
         mouseleaveHome: function () {
-            this.isOpenHome = false;
+            this.showHomeDetail = false;
         },
-        
         mouseoverPage: function () {
-            this.isOpenPage = true;
-        },
+            this.showPageDetail = true;
+            },
         mouseleavePage: function () {
-            this.isOpenPage = false;
+            this.showPageDetail = false;
         }
-    }
+    },
 });

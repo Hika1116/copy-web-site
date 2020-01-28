@@ -28,18 +28,22 @@
             <li>
               <span v-on:mouseover="mouseoverHome" v-on:mouseleave="mouseleaveHome">
                 <a href="#">ホーム</a>
-                <ul class="dropdown" v-bind:class="{isOpenHome}" >
-                  <li><a href="#">⇨カスタマイズ</a></li>
-                </ul>
+                <transition name="nav-detail">
+                  <ul class="dropdown" v-if="showHomeDetail">
+                    <li><a href="#">⇨カスタマイズ</a></li>
+                  </ul>
+                </transition>
               </span>
             </li>
             <li>
               <span v-on:mouseover="mouseoverPage" v-on:mouseleave="mouseleavePage">
                 <a href="#">ページ</a>
-                <ul class="dropdown" v-bind:class="{ isOpenPage }">
-                  <li><a href="#">アイキャッチ画像無しのページ</a></li>
-                  <li><a href="#">ページ（全幅テンプレート）</a></li>
-                </ul>
+                <transition name="nav-detail">
+                  <ul class="dropdown" v-if="showPageDetail">
+                    <li><a href="#">アイキャッチ画像無しのページ</a></li>
+                    <li><a href="#">ページ（全幅テンプレート）</a></li>
+                  </ul>
+                </transition>
               </span>
             </li>
             <li><a href="#">タイポグラフィー</a></li>
