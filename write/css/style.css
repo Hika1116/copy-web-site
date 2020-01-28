@@ -74,7 +74,7 @@ header {
 
 .dropdown li {
     width: 220px;
-    border: solid 1px black;
+    border: solid 1px #EEEEEE;
     background-color: white;
 }
 
@@ -91,13 +91,14 @@ header {
 
 
 .nav-detail-enter-active {
-    transition: opacity 1s;
+    transition: all 1s ease-in-out;
 }
 
 .nav-detail-leave-active{
-    transition: opacity .5s;
+    transition: all .5s ease-in-out;
 }
 .nav-detail-enter,
 .nav-detail-leave-to {
     opacity: 0;
+    transform: translateX(-20px);
 }
