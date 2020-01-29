@@ -1,0 +1,31 @@
+.nav-detail-enter-active {
+    transition: all 1s ease-in-out;
+}
+
+.nav-detail-leave-active {
+    transition: all .5s ease-in-out;
+}
+
+.nav-detail-enter,
+.nav-detail-leave-to {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+
+.search-leave-active,
+.search-enter-active {
+    transition: all .5s ease-in-out;
+}
+
+.search-leave,
+.search-enter-to {
+    width: 200px;
+    opacity: 1;
+}
+
+.search-enter,
+.search-leave-to {
+    width: 0;
+    opacity: 0;
+}

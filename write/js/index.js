@@ -4,6 +4,7 @@ var nav = new Vue ({
     data:{
         showHomeDetail:false,
         showPageDetail:false,
+        displaySearchArea:false,
     },
     methods: {
         mouseoverHome: function () {
@@ -17,6 +18,9 @@ var nav = new Vue ({
             },
         mouseleavePage: function () {
             this.showPageDetail = false;
+        },
+        displaySearch: function () {
+            this.displaySearchArea = !this.displaySearchArea;
         }
     },
 });
