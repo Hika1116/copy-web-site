@@ -23,33 +23,39 @@
   <!-- Header area-->
   <header class="container">
       <div class="row">
-        <h2 class="col-12" id="title"><a href="#">Write</a></h2>
-        <h3 class="col-2" id="subtitle">書くためのテーマ</h3>
-
-        <!-- navigation -->
-        <div id="hello">
-          <ul>
-            <li>
-              <accodion-list>
-                <template v-slot:menu-title>ホーム</template>
-                <template v-slot:menu-list>
-                  <li><a href="#">⇨カスタマイズ</a></li>
-                </template>
-              </accodion-list>
-            </li>
-            <li>
-              <accodion-list>
-                <template v-slot:menu-title>ページ</template>
-                <template v-slot:menu-list>
-                  <li><a href="#">アイキャッチ画像無しのページ</a></li>
-                  <li><a href="#">ページ（全幅テンプレート）</a></li>
-                </template>
-              </accodion-list>
-            </li>
-            <li>タイポグラフィー</li>
-            <li>お問い合わせ</li>
-          </ul>
+        <!-- Title -->
+        <div class="col-3" id="title">
+          <h2><a href="#">Write</a></h2>
+          <h3>書くためのテーマ</h3>
         </div>
+        
+        <!-- Navigation area -->
+        <nav class="col-9">
+          <div id="nav">
+            <ul>
+              <li>
+                <accodion-list>
+                  <template v-slot:menu-title>ホーム</template>
+                  <template v-slot:menu-list>
+                    <li><a href="#">⇨カスタマイズ</a></li>
+                  </template>
+                </accodion-list>
+              </li>
+              <li>
+                <accodion-list>
+                  <template v-slot:menu-title>ページ</template>
+                  <template v-slot:menu-list>
+                    <li><a href="#">アイキャッチ画像無しのページ</a></li>
+                    <li><a href="#">ページ（全幅テンプレート）</a></li>
+                  </template>
+                </accodion-list>
+              </li>
+              <li>タイポグラフィー</li>
+              <li>お問い合わせ</li>
+            </ul>
+          </div>
+        </nav>
+        
 
         <!-- <nav class="col-10" id="nav">
           <ul>

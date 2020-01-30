@@ -67,7 +67,7 @@ const accodionList = Vue.component('accodion-list',{
 })
 
 var app = new Vue({
-    el: '#hello',
+    el: '#nav',
     components: {
         'accodion-list': accodionList,
       }

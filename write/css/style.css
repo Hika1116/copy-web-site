@@ -10,55 +10,67 @@ header {
     margin-bottom: 60px;
 }
 
-#title a {
+
+
+/* Header area */
+/* Title */
+#title {
+    height: 100px;
+}
+#title h2{
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+#title h2 a {
     color: black;
     font-size: 36px;
     font-weight: 700;
     text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 
-#title a:hover {
+#title h2 a:hover {
     opacity: 0.6;
 }
 
-#subtitle {
+#title h3 {
     color: #777777;
     font-size: 18px;
     font-weight: 400;
     vertical-align: middle;
-    height: 40px;
-
-    display: -webkit-flex;
+    /* display: -webkit-flex;
     display: flex;
     -webkit-align-items: center; 
-    align-items: center; 
+    align-items: center;  */
 }
 
-.header-image img {
-    display: block;
-    margin:auto;
-    width: 100%;
-}
 
+/* Navigation area */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 #nav {
     display: -webkit-flex;
     display: flex;
     justify-content: flex-end;
     height: 40px;
 }
-
 #nav > ul{
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center; 
-    align-items: center; 
+    align-items: baseline; 
 
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#nav > ul >li {
+#nav > ul > li {
     position: relative;
 }
 
@@ -71,20 +83,8 @@ header {
     color: #4D4D4D;
     text-decoration: none;
 }
-
 #nav ul li a:hover{
     color: #DAA520;
-}
-
-#nav ul li:last-child{
-    margin-right: 230px;
-}
-
-.search-div {
-    position: absolute;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .dropdown {
@@ -96,14 +96,13 @@ header {
     list-style-type: none;
 }
 
-#nav ul li span a {
-    padding: 16px;
-}
-
 .dropdown li {
     width: 220px;
     border: solid 1px #EEEEEE;
     background-color: white;
+}
+#nav ul li span a {
+    padding: 16px;
 }
 
 .dropdown li a {
@@ -115,6 +114,14 @@ header {
 
 .dropdown li a :hover {
     color: #DAA520;
+}
+
+/* 
+.search-div {
+    position: absolute;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .search-area {
@@ -139,4 +146,11 @@ header {
 .active{
     border: solid 1px #f5f5f5;
     border-right: none;
+} */
+
+/* Top image */
+.header-image img {
+    display: block;
+    margin:auto;
+    width: 100%;
 }
