@@ -14,6 +14,8 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-clickaway@2.2.2/dist/vue-clickaway.min.js"></script>
+
 
   <title>Title</title>
 </head>
@@ -22,14 +24,38 @@
   <header class="container">
       <div class="row">
         <h2 class="col-12" id="title"><a href="#">Write</a></h2>
-        <h3 class="col-3" id="subtitle">書くためのテーマ</h3>
+        <h3 class="col-2" id="subtitle">書くためのテーマ</h3>
 
         <!-- navigation -->
-        <nav class="col-9" id="nav">
+        <div id="hello">
+          <ul>
+            <li>
+              <accodion-list>
+                <template v-slot:menu-title>ホーム</template>
+                <template v-slot:menu-list>
+                  <li><a href="#">⇨カスタマイズ</a></li>
+                </template>
+              </accodion-list>
+            </li>
+            <li>
+              <accodion-list>
+                <template v-slot:menu-title>ページ</template>
+                <template v-slot:menu-list>
+                  <li><a href="#">アイキャッチ画像無しのページ</a></li>
+                  <li><a href="#">ページ（全幅テンプレート）</a></li>
+                </template>
+              </accodion-list>
+            </li>
+            <li>タイポグラフィー</li>
+            <li>お問い合わせ</li>
+          </ul>
+        </div>
+
+        <!-- <nav class="col-10" id="nav">
           <ul>
             <li>
               <span v-on:mouseover="mouseoverHome" v-on:mouseleave="mouseleaveHome">
-                <a href="#">ホーム</a>
+                <a href="#">ホーム&#9663;</a>
                 <transition name="nav-detail">
                   <ul class="dropdown" v-if="showHomeDetail">
                     <li><a href="#">⇨カスタマイズ</a></li>
@@ -39,7 +65,7 @@
             </li>
             <li>
               <span v-on:mouseover="mouseoverPage" v-on:mouseleave="mouseleavePage">
-                <a href="#">ページ</a>
+                <a href="#">ページ&#9663;</a>
                 <transition name="nav-detail">
                   <ul class="dropdown" v-if="showPageDetail">
                     <li><a href="#">アイキャッチ画像無しのページ</a></li>
@@ -50,17 +76,22 @@
             </li>
             <li><a href="#">タイポグラフィー</a></li>
             <li><a href="#">お問い合わせ</a></li>
-
-            <li>
-              <i v-on:click="displaySearch" class="fas fa-search"></i>
-              <transition name="search">
-                  <input class="search-area" v-if="displaySearchArea" type="text" placeholder="検索...">
-              </transition>
-            </li>
           </ul>
-        </nav>
+
+          <div class="search-div" v-on-clickaway="away">
+            <span id="search-icon" :class="{active:displaySearchArea}">
+              <i v-on:click="displaySearch" class="fas fa-search fa-lg"></i>
+            </span>
+            <transition name="search" class="search-transition">
+              <input ref='focusThis' class="search-area" v-show="displaySearchArea" type="text" placeholder="検索...">
+            </transition>
+          </div>
+        </nav> -->
       </div>
   </header>
+
+  
+  
 
   <!-- Main area -->
   <main class="container">
@@ -181,7 +212,7 @@
   </footer>
   <script src="/library/jquery/jquery-3.4.1.min.js"></script>
   <script src="/library/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index.vue"></script>
 </body>
 </html>
 
