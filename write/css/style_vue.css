@@ -1,5 +1,5 @@
 .nav-detail-enter-active {
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .nav-detail-leave-active {
@@ -14,17 +14,20 @@
 
 .search-leave-active,
 .search-enter-active {
-    transition: all .3s ease-in-out;
+    transition: width .3s ease-in-out;
 }
 
 .search-leave,
 .search-enter-to {
-    width: 200px;
-    opacity: 1;
+    width: 190px;
 }
 
 .search-enter,
 .search-leave-to {
-    width: 0;
-    opacity: 0;
+    width: 0px;
+}
+
+.active {
+    border: solid 1px #E9E9E9;
+    border-right: none;
 }

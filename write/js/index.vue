@@ -1,45 +1,43 @@
+
 const clickaway = window.VueClickaway.mixin;
 
-// var nav = new Vue ({
-//     el:'#nav',
-//     mixins: [ clickaway ],
-//     data:{
-//         showHomeDetail:false,
-//         showPageDetail:false,
-//         displaySearchArea:false,
-//     },
-//     methods: {
-//         mouseoverHome: function () {
-//             this.showHomeDetail = true;
-//         },
-//         mouseleaveHome: function () {
-//             this.showHomeDetail = false;
-//         },
-//         mouseoverPage: function () {
-//             this.showPageDetail = true;
-//             },
-//         mouseleavePage: function () {
-//             this.showPageDetail = false;
-//         },
-//         displaySearch: function () {
-//             this.displaySearchArea = !this.displaySearchArea;
-//             if(this.displaySearchArea){
-//                 this.$refs.focusThis.focus();
-//             }
-//         },
-//         //検索フォームの外側を押下した場合のイベント
-//         away: function() {
-//             this.displaySearchArea = false;
-//           },
-//     },
-// });
+//検索フォームのコンポーネント
+const searchArea = Vue.component('search-area',{
+    template: `
+        <div id="search" v-on-clickaway="away">
+            <span :class="{active:displaySearchArea}">
+                <i v-on:click="displaySearch" class="fas fa-search fa-lg"></i>
+            </span>
+            <transition name="search">
+                <input type="text" placeholder="検索..." v-show="displaySearchArea">
+            </transition>
+        </div>
+     `,
+     mixins: [ clickaway ],
+     data() {
+         return {
+             displaySearchArea:false,
+         }
+     },
+     methods:{
+         displaySearch:function(){
+             this.displaySearchArea = !this.displaySearchArea;
+         },
+         away:function(){
+             this.displaySearchArea = false;
+         }
+     }
+})
 
-const accodionList = Vue.component('accodion-list',{
+
+
+//アコーディオンメニューの一つのコンポーネント
+const accordionList = Vue.component('accordion-list', {
     template : `
-        <span v-on:mouseover="mouseoverHome" v-on:mouseleave="mouseleaveHome">
+        <span id="search-area" v-on:mouseover="mouseoverHome" v-on:mouseleave="mouseleaveHome">
             <a href="#"><slot name="menu-title"></slot>&#9663;</a>
             <transition name="nav-detail">
-                <ul class="dropdown" v-if="showHomeDetail">
+                <ul class="drop-down" v-if="showHomeDetail">
                     <slot name="menu-list"></slot>
                 </ul>
             </transition>
@@ -69,6 +67,7 @@ const accodionList = Vue.component('accodion-list',{
 var app = new Vue({
     el: '#nav',
     components: {
-        'accodion-list': accodionList,
+        'accordion-list': accordionList,
+        'search-area': searchArea,
       }
   })

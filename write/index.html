@@ -21,90 +21,55 @@
 </head>
 <body>
   <!-- Header area-->
-  <header class="container">
-      <div class="row">
-        <!-- Title -->
-        <div class="col-3" id="title">
-          <h2><a href="#">Write</a></h2>
-          <h3>書くためのテーマ</h3>
-        </div>
-        
-        <!-- Navigation area -->
-        <nav class="col-9">
-          <div id="nav">
-            <ul>
-              <li>
-                <accodion-list>
-                  <template v-slot:menu-title>ホーム</template>
-                  <template v-slot:menu-list>
-                    <li><a href="#">⇨カスタマイズ</a></li>
-                  </template>
-                </accodion-list>
-              </li>
-              <li>
-                <accodion-list>
-                  <template v-slot:menu-title>ページ</template>
-                  <template v-slot:menu-list>
-                    <li><a href="#">アイキャッチ画像無しのページ</a></li>
-                    <li><a href="#">ページ（全幅テンプレート）</a></li>
-                  </template>
-                </accodion-list>
-              </li>
-              <li>タイポグラフィー</li>
-              <li>お問い合わせ</li>
-            </ul>
-          </div>
-        </nav>
-        
-
-        <!-- <nav class="col-10" id="nav">
+  <header>
+    <div class="row nav-area">
+      <!-- Title -->
+      <div class="col-lg-3 col-md-12" id="title">
+        <h2><a href="#">Write</a></h2>
+        <h3>書くためのテーマ</h3>
+      </div>
+      
+      <!-- Navigation area -->
+      <nav class="col-lg-9 col-md-12">
+        <div id="nav">
           <ul>
             <li>
-              <span v-on:mouseover="mouseoverHome" v-on:mouseleave="mouseleaveHome">
-                <a href="#">ホーム&#9663;</a>
-                <transition name="nav-detail">
-                  <ul class="dropdown" v-if="showHomeDetail">
-                    <li><a href="#">⇨カスタマイズ</a></li>
-                  </ul>
-                </transition>
-              </span>
+              <accordion-list>
+                <template v-slot:menu-title>ホーム</template>
+                <template v-slot:menu-list>
+            <li><a href="#">⇨カスタマイズ</a></li>
+            </template>
+            </accordion-list>
             </li>
             <li>
-              <span v-on:mouseover="mouseoverPage" v-on:mouseleave="mouseleavePage">
-                <a href="#">ページ&#9663;</a>
-                <transition name="nav-detail">
-                  <ul class="dropdown" v-if="showPageDetail">
-                    <li><a href="#">アイキャッチ画像無しのページ</a></li>
-                    <li><a href="#">ページ（全幅テンプレート）</a></li>
-                  </ul>
-                </transition>
-              </span>
+              <accordion-list>
+                <template v-slot:menu-title>ページ</template>
+                <template v-slot:menu-list>
+            <li><a href="#">アイキャッチ画像無しのページ</a></li>
+            <li><a href="#">ページ（全幅テンプレート）</a></li>
+            </template>
+            </accordion-list>
             </li>
-            <li><a href="#">タイポグラフィー</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li>タイポグラフィー</li>
+            <li>お問い合わせ</li>
           </ul>
-
-          <div class="search-div" v-on-clickaway="away">
-            <span id="search-icon" :class="{active:displaySearchArea}">
-              <i v-on:click="displaySearch" class="fas fa-search fa-lg"></i>
-            </span>
-            <transition name="search" class="search-transition">
-              <input ref='focusThis' class="search-area" v-show="displaySearchArea" type="text" placeholder="検索...">
-            </transition>
-          </div>
-        </nav> -->
+          <search-area></search-area>
+        </div>
+      </nav>
+      
+      <div class="col-12 header-img">
+        <img src="/img/top-image.jpg" alt="top-image">
       </div>
+    </div>
+    
   </header>
-
-  
-  
 
   <!-- Main area -->
   <main class="container">
     <!-- top image -->
-    <div class="header-image">
+    <!-- <div class="header-image">
       <img src="/img/top-image.jpg" alt="top-image">
-    </div>
+    </div> -->
 
   <!-- site detail -->
   <div class="site-detail">
