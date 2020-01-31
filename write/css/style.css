@@ -192,6 +192,7 @@ main {
     margin: 10px 0;
 }
 
+/* pagination */
 .pagination {
     width: 100%;
     display:-webkit-box;
@@ -237,7 +238,16 @@ main {
     color: #333333;
 }
 
+/* Footer Area */
+footer {
+    display: flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    flex-wrap: wrap;
 
+    max-width: 1035px;
+    margin: auto;
+}
 
 
 @media screen and (max-width:768px) {
@@ -314,6 +324,29 @@ main {
     .post header h3 {
         display: block;
         width: 67%;
+    }
+
+    .profile {
+        width: 25%;
+        margin: 0;
+    }
+    .footer-right {
+        width: 25%;
+        margin: 0;
+    }
+    .recent-article {
+        width: 25%;
+        margin: 0;
+    }
+    .category {
+        width: 25%;
+        margin: 0;
+    }
+    .bottm-footer{
+        width: 100%;
+    }
+    .line {
+        width: 100%;
     }
 }
 
