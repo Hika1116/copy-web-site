@@ -137,6 +137,108 @@ header {
 }
 
 
+/* Main ara */
+main {
+    display: flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    flex-wrap: wrap;
+
+    max-width: 1035px;
+    margin: auto;
+}
+/* site detail */
+.site-detail {
+    margin: 100px 0;
+    width: 100%;
+}
+.site-detail p {
+    font-size: 27px;
+    line-height: 1.8;
+    color: #777777;
+}
+
+/* article */
+.post-area {
+    margin: 0 10px;
+}
+.post header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    width: 100%;
+    margin: 3px 0;
+}
+.post header p {
+    font-size:17px;
+    color: #999999;
+    font-weight: 400;
+    width: 100%;
+    margin: 3px 0;
+}
+.post {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.post header {
+    width: 100%;
+    margin: 10px 0;
+}
+.post .koji {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.pagination {
+    width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.pagination ul  {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+.pagination ul li{
+    width: 45px;
+    height: 45px;
+    font-size: 17px;
+    text-decoration: none;
+    list-style-type: none;
+    border: solid 1px #DDDDDD;
+    margin-right: 10px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.pagination ul li:last-child{
+    width: 70px;
+    height: 45px;
+
+}
+.pagination ul li:first-child {
+    font-weight: 700;
+    background-color: #EEEEEE;
+}
+.pagination ul li a {
+    color: #333333;
+}
+
+
+
 
 @media screen and (max-width:768px) {
     /*スマホ用のcssを記述*/
@@ -146,6 +248,12 @@ header {
     header {
         width: 100%;
         margin: 0;
+    }
+    .site-detail {
+        margin: 100px 10px;
+    }
+    .site-detail p {
+        font-size: 23px;
     }
 }
     
@@ -169,6 +277,43 @@ header {
 
     #nav {
         width: 70%;
+    }
+
+    /* article */
+    .post {
+        width: 100%;
+        margin: 70px 0;
+        padding: 0;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .post header {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .post .koji {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .post .koji p {
+        width: 67%;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    .post header p {
+        display: block;
+        width: 33%;
+    }
+    .post header h3 {
+        display: block;
+        width: 67%;
     }
 }
 
