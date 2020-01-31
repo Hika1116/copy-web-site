@@ -1,3 +1,180 @@
+
+body {
+    font-family: 'Georgia', '游明朝', 'YuMincho', "Hiragino Mincho ProN", 'Meiryo', serif;
+    font-size: 17px;
+    color: #4D4D4D;
+    margin:60px 40px;
+}
+
+/* Header Area */
+header {
+    display: flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    flex-wrap: wrap;
+
+    max-width: 1035px;
+    margin: auto;
+}
+
+/* title */
+#title {
+    padding: 0;
+}
+#title h2 {
+    margin-bottom: 6px;
+}
+#title h2 a {
+    color: black;
+    font-size: 36px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+#title h2 a:hover {
+    opacity: .8;
+}
+#title h3 {
+    color: #777777;
+    font-size: 18px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+/* navigation area */
+#nav {
+    /* プレフレックスを付ける場合は、専用のオプションcssを必ず付ける */
+    display: flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+    align-items: flex-end;
+    position: relative;
+}
+#nav ul {
+    display: flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
+
+    text-decoration: none;
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+#nav ul li {
+    margin-right: 30px;
+    height: 100%;
+    position: absolute;
+    top: -10px;
+}
+#nav ul li a {
+    color: #4D4D4D;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+#nav ul li a:hover{
+    color: #DAA520;
+}
+#nav ul li span {
+    padding-bottom: 30px;
+}
+
+/* drop-dwon */
+#nav > ul >li{
+    position: relative;
+}
+
+#nav ul li span ul {
+    display: block;
+    position: absolute;
+    top:100%;
+    left: -20px;
+    list-style-type: none;
+    width: 230px;
+    z-index:1;
+    margin-top: 20px;
+}
+
+#nav ul li span ul li {
+    position: relative;
+    padding: 10px;
+    height: 100%;
+    word-wrap: break-word;
+    border: solid 1px #EEEEEE;
+    background-color: white;
+}
+#nav ul li span ul li a {
+    color: #4D4D4D;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+#nav ul li span ul li a:hover {
+    color: #DAA520;
+}
+
+/* search area */
+#search-area {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+/* header image */
+.header-img {
+    margin-top: 74px;
+    padding: 0;
+}
+.header-img img {
+    width: 100%;
+}
+
+
+
+@media screen and (max-width:768px) {
+    /*スマホ用のcssを記述*/
+    body{
+        margin: 30px 0;
+    }
+    header {
+        width: 100%;
+        margin: 0;
+    }
+}
+    
+@media screen and (max-width:991px) and (min-width:769px) {
+    /*タブレット用のcssを記述*/
+    #title {
+        width: 100%;
+    }
+    
+    #nav {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    /*pc用のcssを記述*/
+    #title {
+        width: 30%;
+    }
+
+    #nav {
+        width: 70%;
+    }
+}
+
+
+
+
 /* 
 body {
     font-family: 'Georgia', '游明朝', 'YuMincho', "Hiragino Mincho ProN", 'Meiryo', serif;
@@ -43,7 +220,6 @@ header {
     font-weight: 400;
     vertical-align: middle;
 }
-
 
 nav {
     display: flex;
