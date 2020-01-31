@@ -72,3 +72,16 @@ var app = new Vue({
         'search-area': searchArea,
       }
   })
+
+
+  var menu = new Vue({
+      el: '#header',
+      data:{
+          isOpenClass:false,
+      },
+      methods:{
+          clickHumberger:function(){
+              this.isOpenClass = !this.isOpenClass;
+          }
+      }
+  })

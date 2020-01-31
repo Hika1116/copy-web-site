@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hamburger menu</title>
+</head>
+<body>
+ <div id="app">
+  <header class="header">
+    <div class="header__menu">
+      <div class="header__menu__line" @click="naviOpen" :class="{'is-active': active}">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+   <transition name="navi">
+  <nav class="navi" v-show="navi">
+    <ul class="navi__wrap">
+      <li><a href="#">AAA</a></li>
+      <li><a href="#">BBB</a></li>
+      <li><a href="#">CCC</a></li>
+      <li><a href="#">DDD</a></li>
+      <li><a href="#">EEE</a></li>
+    </ul>
+  </nav>
+ </transition>
+ </div>
+</body>
+</html>

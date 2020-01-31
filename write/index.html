@@ -21,7 +21,7 @@
 </head>
 <body>
   <!-- Header Area-->
-  <header>
+  <header id="header">
     <!-- title -->
     <div id="title">
       <h2><a href="#">Write</a></h2>
@@ -54,11 +54,42 @@
       <!-- search area -->
       <search-area></search-area>
     </nav>
-    
     <!-- header image -->
     <div class="col-12 header-img">
       <img src="/img/top-image.jpg" alt="top-image">
     </div>
+    <!-- <div id="menu"> -->
+      <div class="humberger-area">
+        <div class="humberger" v-bind:class="{'active-humberger':isOpenClass}" v-on:click="clickHumberger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <!-- nameはtrasition直下の要素クラス名似合わせる -->
+      <transition name="menu">
+        <nav class="menu" v-show="isOpenClass">
+          <ul>
+            <li>
+              <a href="#">ホーム</a>
+              <ul>
+                <li><a href="#">→カスタム</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">ページ</a>
+              <ul>
+                <li><a href="#">アイキャッチ画像無しのページ</a></li>
+                <li><a href="#">ページ（全幅テンプレート）</a></li>
+              </ul>
+            </li>
+            <li><a href="#">タイポグラフィー</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </transition>
+    <!-- </div> -->
   </header>
 
   <!-- Main area -->
@@ -133,15 +164,20 @@
     <hr class="line">
     <!-- profile -->
     <div class="profile">
-      <div class="profile-img">
-        <img src="/img/profile-m.png" alt="">
-      </div>
-      <div class="profile-name"></div>
-      <h3>Jone Doe</h3>
-      <div class="profile-sns">
-        <p><a href="#">twitter</a></p>
-        <p><a href="#">facebook</a></p>
-        <p><a href="#">instagram</a></p>
+      <div class="profile-img-media">
+        <div class="profile-img">
+          <img src="/img/profile-m.png" alt="">
+        </div>
+        <div class="profile-media">
+          <div class="profile-name">
+            <h3>Jone Doe</h3>
+          </div>
+          <div class="profile-sns">
+            <p><a href="#"><i class="fab fa-twitter fa-lg"></i></a></p>
+            <p><a href="#"><i class="fab fa-facebook-square fa-lg"></i></a></p>
+            <p><a href="#"><i class="fab fa-instagram fa-lg"></i></a></p>
+          </div>
+        </div>
       </div>
       <div class="profile-text">
         <p>これはプロフィールウィジェットです。ここにはプロフィール画像・名前・自己紹介文・ソーシャルリンク（最大7つ）を設定することができます。</p>
@@ -159,7 +195,7 @@
       <h3>最近の投稿</h3>
       <div class="recent-article-area">
         <article>
-          <h4>書くためのテーマ1</h4>
+          <h4><a href="#">書くためのテーマ1</a></h4>
           <p>2018年9月1日</p>
         </article>
         <article>
@@ -175,19 +211,28 @@
 
     <!-- category -->
     <div class="category">
-      <p><a href="#">サンプル投稿</a></p>
-      <p><a href="#">投稿フォーマット</a></p>
-      <p><a href="#">普通の投稿</a></p>
-      <input type="text" placeholder="検索">
+      <h3>カテゴリー</h3>
+      <div class="footer-post-area">
+        <p><a href="#">サンプル投稿</a></p>
+        <p><a href="#">投稿フォーマット</a></p>
+        <p><a href="#">普通の投稿</a></p>
+      </div>
+      <input id="footer-search" type="text" placeholder="検索">
     </div>
 
-    <div class="bottm-footer">
-      <form action="#">
-        Powered by WordPress | Theme: Write by Themegraphy
-      </form>
+    <div class="bottom-footer">
+      <hr class="line">
+      <div class="bottom-area">
+        <div class="profile-sns">
+          <p><a href="#"><i class="fab fa-twitter fa-lg"></i></a></p>
+          <p><a href="#"><i class="fab fa-facebook-square fa-lg"></i></a></p>
+          <p><a href="#"><i class="fab fa-instagram fa-lg"></i></a></p>
+      </div>
+      <div class="bottom-text">
+        <p>Powered by WordPress | Theme: Write by Themegraphy</p>
+      </div>
+      </div>
     </div>
-
-    
   </footer>
   <script src="/library/jquery/jquery-3.4.1.min.js"></script>
   <script src="/library/bootstrap/js/bootstrap.bundle.min.js"></script>
