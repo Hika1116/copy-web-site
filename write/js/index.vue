@@ -65,17 +65,12 @@ const accordionList = Vue.component('accordion-list', {
     },
 })
 
-var app = new Vue({
-    el: '#nav',
-    components: {
-        'accordion-list': accordionList,
-        'search-area': searchArea,
-      }
-  })
-
-
   var menu = new Vue({
       el: '#header',
+      components: {
+          'accordion-list': accordionList,
+          'search-area': searchArea,
+      },
       data:{
           isOpenClass:false,
       },
